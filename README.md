@@ -206,6 +206,16 @@ Summarize: what was installed, what was skipped (and why), and the `settings.jso
 - **No secrets** — the bundled `env-file-guard` hook blocks `.env`/`.key`/`.pem`/credential access, and no skill writes tokens into config.
 - **Read-only by default** — `setup-audit` never mutates; the other skills confirm before each change and offer a dry preview.
 
+## Evals
+
+A behavioral regression suite verifies the dangerous paths (settings.json merge, idempotency, no-clobber, audit detection) against a sandbox — it never touches your real `~/.claude`:
+
+```bash
+./evals/run-evals.sh
+```
+
+See [`evals/README.md`](evals/README.md). Current status: **12/12 pass**.
+
 ## Repository layout
 
 ```
