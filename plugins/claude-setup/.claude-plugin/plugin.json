@@ -1,0 +1,10 @@
+{
+  "name": "claude-setup",
+  "description": "Onboard Claude Code to a new machine or project, validate an existing setup, run a settings.json config wizard, and scaffold ICM-structured projects. Ships four skills (setup-onboard, setup-audit, setup-config-wizard, setup-scaffold) plus hook/settings/ICM templates they draw from. All work is driven through Claude. Idempotent and non-destructive: settings.json is merged, never overwritten, and existing files are never clobbered.",
+  "version": "0.1.0",
+  "author": { "name": "mcmespinaa", "url": "https://github.com/mcmespinaa" },
+  "homepage": "https://github.com/mcmespinaa/claude-setup-helper",
+  "repository": "https://github.com/mcmespinaa/claude-setup-helper",
+  "license": "MIT",
+  "keywords": ["setup", "onboarding", "claude-code", "settings", "hooks", "mcp", "icm", "scaffold"]
+}
