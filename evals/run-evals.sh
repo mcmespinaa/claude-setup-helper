@@ -40,10 +40,13 @@ mkdir -p "$CLAUDE_HOME/hooks"
 merge_settings() {  # $1 existing, $2 template -> merged json on stdout
   jq -n --slurpfile e "$1" --slurpfile t "$2" '
     ($e[0]) as $E | ($t[0]) as $T
+    # existing wins on every scalar/object key
     | ($T * $E) as $base
     | $base
     | .permissions.allow =
         ((($T.permissions.allow // []) + ($E.permissions.allow // [])) | unique_by(.))
+    # existing hook entries first (untouched); then append only template
+    # entries not already present, so re-runs never duplicate a hook
     | .hooks.PreToolUse =
         (($E.hooks.PreToolUse // [])
          + [ ($T.hooks.PreToolUse // [])[]

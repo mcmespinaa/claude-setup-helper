@@ -123,13 +123,16 @@ cp "$SETTINGS" "$BACKUP"          # always back up first
 existing="$SETTINGS"; template="$TEMPLATES/settings.template.json"
 merged="$(jq -n --slurpfile e "$existing" --slurpfile t "$template" '
   ($e[0]) as $E | ($t[0]) as $T
-  | ($T * $E) as $base                      # existing wins on every scalar/object key
+  # existing wins on every scalar/object key
+  | ($T * $E) as $base
   | $base
   | .permissions.allow =
       ((($T.permissions.allow // []) + ($E.permissions.allow // [])) | unique_by(.))
+  # existing hook entries first (untouched); then append only template
+  # entries not already present, so re-runs never duplicate a hook
   | .hooks.PreToolUse =
-      (($E.hooks.PreToolUse // [])           # existing entries first, untouched
-       + [ ($T.hooks.PreToolUse // [])[]      # append only template entries not already present
+      (($E.hooks.PreToolUse // [])
+       + [ ($T.hooks.PreToolUse // [])[]
            | select( . as $h
                | (($E.hooks.PreToolUse // []) | any(. == $h)) | not ) ])
 ')"
