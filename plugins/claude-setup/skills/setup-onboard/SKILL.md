@@ -1,6 +1,18 @@
 ---
 name: setup-onboard
-description: "Onboard Claude Code onto a new machine or a fresh account. Use when the user says /setup-onboard, 'set up Claude Code on this machine', 'install my hooks/skills/commands', 'get Claude configured', or has just installed the claude-setup plugin and wants their environment wired up. Installs the safety hooks (block-destructive, env-file-guard), wires them into settings.json via a non-destructive merge, optionally copies skills/commands from a source the user points at, and registers MCP servers. Idempotent and non-destructive: settings.json is always backed up and merged (never overwritten), and existing files are never clobbered without explicit confirmation. NOT for auditing an existing setup (use /setup-audit), tuning settings interactively (use /setup-config-wizard), or creating a project's folder structure (use /setup-scaffold)."
+description: >-
+  Onboard Claude Code onto a new machine or a fresh account. Use when the user
+  says /setup-onboard, 'set up Claude Code on this machine', 'install my
+  hooks/skills/commands', 'get Claude configured', or has just installed the
+  claude-setup plugin and wants their environment wired up. Installs the safety
+  hooks (block-destructive, env-file-guard), wires them into settings.json via a
+  non-destructive merge, optionally copies skills/commands from a source the
+  user points at, and registers MCP servers. Idempotent and non-destructive:
+  settings.json is always backed up and merged (never overwritten), and existing
+  files are never clobbered without explicit confirmation. NOT for auditing an
+  existing setup (use /setup-audit), tuning settings interactively (use
+  /setup-config-wizard), or creating a project's folder structure (use
+  /setup-scaffold).
 ---
 
 # setup-onboard

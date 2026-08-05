@@ -1,6 +1,14 @@
 ---
 name: setup-config-wizard
-description: "Interactively tune ~/.claude/settings.json — permissions, hooks, env vars, and output style — through a guided conversation. Use when the user says /setup-config-wizard, 'help me configure settings.json', 'set up my permissions', 'add an allow rule', 'reduce permission prompts', 'turn on a hook', or 'what should my Claude settings be'. Explains each trade-off before changing it, edits settings.json in place with a backup, and validates the JSON after every write. NOT for first-time install of hooks/skills (use /setup-onboard) or read-only checking (use /setup-audit)."
+description: >-
+  Interactively tune ~/.claude/settings.json — permissions, hooks, env vars, and
+  output style — through a guided conversation. Use when the user says
+  /setup-config-wizard, 'help me configure settings.json', 'set up my
+  permissions', 'add an allow rule', 'reduce permission prompts', 'turn on a
+  hook', or 'what should my Claude settings be'. Explains each trade-off before
+  changing it, edits settings.json in place with a backup, and validates the
+  JSON after every write. NOT for first-time install of hooks/skills (use
+  /setup-onboard) or read-only checking (use /setup-audit).
 ---
 
 # setup-config-wizard

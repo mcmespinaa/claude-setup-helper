@@ -1,6 +1,15 @@
 ---
 name: setup-scaffold
-description: "Scaffold an ICM-structured project so Claude Code works well in it from day one. Use when the user says /setup-scaffold, 'set up a new project for Claude', 'create a CLAUDE.md', 'scaffold this repo', 'give this project the ICM structure', or starts a fresh project and wants the folder architecture. Interviews the user briefly, then generates a Layer-0 CLAUDE.md (map), Layer-1 CONTEXT.md rooms for each folder, and optional Layer-2 stage contracts, filling the plugin's ICM templates with real answers. Idempotent: never overwrites an existing CLAUDE.md/CONTEXT.md without confirmation. NOT for configuring ~/.claude itself (use /setup-onboard or /setup-config-wizard)."
+description: >-
+  Scaffold an ICM-structured project so Claude Code works well in it from day
+  one. Use when the user says /setup-scaffold, 'set up a new project for
+  Claude', 'create a CLAUDE.md', 'scaffold this repo', 'give this project the
+  ICM structure', or starts a fresh project and wants the folder architecture.
+  Interviews the user briefly, then generates a Layer-0 CLAUDE.md (map), Layer-1
+  CONTEXT.md rooms for each folder, and optional Layer-2 stage contracts,
+  filling the plugin's ICM templates with real answers. Idempotent: never
+  overwrites an existing CLAUDE.md/CONTEXT.md without confirmation. NOT for
+  configuring ~/.claude itself (use /setup-onboard or /setup-config-wizard).
 ---
 
 # setup-scaffold

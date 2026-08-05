@@ -1,6 +1,14 @@
 ---
 name: setup-audit
-description: "Validate an existing Claude Code setup and report what's missing or broken. Use when the user says /setup-audit, 'check my Claude setup', 'is my config correct', 'why isn't my hook firing', 'verify my settings', or after /setup-onboard to confirm the result. Read-only: inspects ~/.claude/settings.json, ~/.claude/hooks, skills, commands, and MCP registration, then reports a checklist of pass/warn/fail with concrete fixes. Never modifies anything. NOT for installing missing pieces (use /setup-onboard) or interactively editing settings (use /setup-config-wizard)."
+description: >-
+  Validate an existing Claude Code setup and report what's missing or broken.
+  Use when the user says /setup-audit, 'check my Claude setup', 'is my config
+  correct', 'why isn't my hook firing', 'verify my settings', or after
+  /setup-onboard to confirm the result. Read-only: inspects
+  ~/.claude/settings.json, ~/.claude/hooks, skills, commands, and MCP
+  registration, then reports a checklist of pass/warn/fail with concrete fixes.
+  Never modifies anything. NOT for installing missing pieces (use
+  /setup-onboard) or interactively editing settings (use /setup-config-wizard).
 ---
 
 # setup-audit
